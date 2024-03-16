@@ -1,4 +1,7 @@
-export const BookInfo = ({ book }) => {
+import { useResource } from './resource.hook';
+
+export const BookInfo = ({ bookId }) => {
+  const book = useResource(`/books/${bookId}`);
   const { name, price, title, pages } = book || {};
 
   return book ? (

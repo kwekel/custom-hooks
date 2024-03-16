@@ -1,8 +1,9 @@
 import { useCurrentUser } from './current-user.hook';
+import { useResource } from './resource.hook';
 import { useUser } from './user.hook';
 
 export const UserInfo = ({ userId }) => {
-  const user = useUser(userId);
+  const user = useResource("/users/2");
   const { name, age, country, books } = user || {};
   return user ? (
     <>
